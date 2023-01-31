@@ -56,12 +56,31 @@
 
     // take screenshot
     btnScreenshot.addEventListener("click", function () {
-    const img = document.createElement("img");
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
-    canvas.getContext("2d").drawImage(video, 0, 0);
-    img.src = canvas.toDataURL("image/png");
-    screenshotsContainer.prepend(img);
+        // const img = document.createElement("img");
+        // canvas.width = video.videoWidth;
+        // canvas.height = video.videoHeight;
+        // canvas.getContext("2d").drawImage(video, 0, 0);
+        // img.src = canvas.toDataURL("image/png");
+        // screenshotsContainer.prepend(img);
+
+        const video = document.getElementsByTagName("video")[0];
+        const canvas = document.createElement("canvas");
+
+        var width = video.videoWidth, height = video.videoHeight;
+        canvas.width = width;
+        canvas.height = height;
+        
+        var screenshot;
+        canvas.getContext('2d').drawImage(video, 0, 0, width, height);
+
+        var imgData = document.querySelector('.img1');     
+        canvas.getContext('2d').drawImage(imgData, 0, 0, width, height);
+        screenshot = canvas.toDataURL('image/png');
+        
+        var link = document.createElement('a');
+        link.download = 'screenshot.png';
+        link.href = screenshot;
+        link.click();
     });
 
     // switch camera
