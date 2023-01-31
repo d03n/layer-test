@@ -71,10 +71,10 @@
         canvas.height = height;
         
         var screenshot;
-        canvas.getContext('2d').drawImage(video, 0, 0, width, height);
+        canvas.getContext('2d').drawImage(video, 0, 0, 1920, 1080);
 
         var imgData = document.querySelector('.img1');     
-        canvas.getContext('2d').drawImage(imgData, 0, 0, width, height);
+        canvas.getContext('2d').drawImage(imgData, 0, 0, imgData.width, imgData.height);
         screenshot = canvas.toDataURL('image/png');
         
         var link = document.createElement('a');
