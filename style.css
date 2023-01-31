@@ -104,3 +104,8 @@ video {
 .controls > button:hover svg {
     color: white;
 }
+
+.img1 {
+    z-index: 100;
+    bottom: 50%;
+}
