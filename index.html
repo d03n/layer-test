@@ -8,17 +8,31 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 <style>
-    .section {
-
+    @media screen and (orientation: portrait){
+        .img1 {
+            width: 1920;
+            height: 1080;
+            position: absolute;
+            z-index: 2;
+            top: 5%;
+        }
+        .video {
+            position: absolute;
+            z-index: 1;
+        }
     }
-    .img1 {
-        position: absolute;
-        z-index: 2;
-        top: 5%;
-    }
-    .video {
-        position: absolute;
-        z-index: 1;
+    @media screen and (orientation: landscape){
+        .img1 {
+            width: 1080;
+            height: 1920;
+            position: absolute;
+            z-index: 2;
+            top: 5%;
+        }
+        .video {
+            position: absolute;
+            z-index: 1;
+        }
     }
 </style>
 <body>
@@ -56,7 +70,7 @@
     </div>
     </div>
 </section>
-<img class="img1" src="./assets/img1.png" width="1920" height="1080">
+<img class="img1" src="./assets/img1.png">
 
 <canvas class="is-hidden" id="canvas"></canvas>
 <script src="script.js" ></script>
